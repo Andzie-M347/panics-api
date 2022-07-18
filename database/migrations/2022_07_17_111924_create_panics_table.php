@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('panics', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('longtitude')->nullable();
+            $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
             $table->string('panic_type')->nullable();
             $table->mediumText('details')->nullable();

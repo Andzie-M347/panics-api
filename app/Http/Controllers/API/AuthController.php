@@ -79,7 +79,7 @@ class AuthController extends Controller
 
     public function send_panic(Request $request,$id){
         $validator = Validator::make($request->all(), [
-            'longtitude' => 'required|string',
+            'longitude' => 'required|string',
             'latitude' => 'required|string',
             'panic_type' => 'required|string',
             'details' => 'required',
@@ -96,7 +96,7 @@ class AuthController extends Controller
         $user = User::findOrFail($id);
         if(!empty($user)){
             $new = new Panic();
-            $new->longtitude = $request->longtitude;
+            $new->longitude = $request->longitude;
             $new->latitude = $request->latitue;
             $new->panic_type = $request->panic_type;
             $new->details = $request->details;
@@ -160,7 +160,7 @@ class AuthController extends Controller
         foreach($panic as $datum){
             array_push($data,[
                 "id" => $datum->id,
-                "longtitude" => $datum->longtitude,
+                "longitude" => $datum->longitude,
                 "latitude" => $datum->latitude,
                 "panic_type" => $datum->panic_type,
                 "details" => $datum->details,
