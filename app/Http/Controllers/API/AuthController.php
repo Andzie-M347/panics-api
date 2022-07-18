@@ -164,7 +164,7 @@ class AuthController extends Controller
                 "latitude" => $datum->latitude,
                 "panic_type" => $datum->panic_type,
                 "details" => $datum->details,
-                "created_at" => $datum->created_at,
+                "created_at" => $datum->created_at->format('Y-m-d'),
                 "created_by" => User::where('id', $datum->user_id)->first()
             ]);
         }
